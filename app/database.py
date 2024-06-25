@@ -8,30 +8,32 @@ load_dotenv()
 
 DATABASE_CONFIG = {
     'user': os.getenv('DB_USERNAME'),
-    'password': os.getenv('DB_PASSWORD'),
+    'password': os.getenv('DB_PASSWORD'), 
     'host': os.getenv('DB_HOST'),
     'database': os.getenv('DB_NAME'),
-    'port': os.getenv('DB_PORT', 3306)  # puerto predeterminado es 3306 si no se especifica
+    'port': os.getenv('DB_PORT',3306)
 }
-
-# Función para obtener la conexión a la base de datos
+#funcion para obtener la coneccion a la base de datos
 def get_db():
-    # Si 'db' no está en el contexto global de Flask 'g'
+    #si db no esta en el contexto global de flask g
     if 'db' not in g:
-        # Crear una nueva conexión a la base de datos y guardarla en 'g'
+        #crear una nueva conexion a la base de datos y guardar
         g.db = mysql.connector.connect(**DATABASE_CONFIG)
-    # Retornar la conexión a la base de dato
+    #retornar la conexion a la base datos
     return g.db
 
-# Función para cerrar la conexión a la base de datos
+#funcion para cerrar la conexion a la base de datos
+
 def close_db(e=None):
-    # Extraer la conexión a la base de datos de 'g' y eliminarla
-    db = g.pop('db', None)
-    # Si la conexión existe, cerrarla
+    #extraer la conexion a la base de datos yn eliminarla
+    db = g.pop('db',None)
+    #si la conexion existe cerraqrla
     if db is not None:
         db.close()
-
-# Función para inicializar la aplicación con el manejo de la base de datos
+        
+        
+#funcion para inicializar la aplicacion con el manejo de la base de datos
 def init_app(app):
-    # Registrar 'close_db' para que se ejecute al final del contexto de la aplicación
+    #registrar 'close_db' para que se ejecute al final del contexto de la aplicacion
     app.teardown_appcontext(close_db)
+    
