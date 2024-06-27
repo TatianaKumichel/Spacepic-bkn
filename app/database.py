@@ -13,7 +13,7 @@ DATABASE_CONFIG = {
     'database': os.getenv('DB_NAME'),
     'port': os.getenv('DB_PORT',3306)
 }
-#funcion para obtener la coneccion a la base de datos
+#funcion para obtener la conexion a la base de datos
 def get_db():
     #si db no esta en el contexto global de flask g
     if 'db' not in g:
