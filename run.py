@@ -15,4 +15,4 @@ app.route('/usuarios',methods=['DELETE'])(delete_usuario)
 app.route('/pictures',methods=['GET'])(get_all_pictures)
 
 if __name__ == '__main__':
-     app.run(debug=True) 
+     app.run(debug=True, host="0.0.0.0") 
