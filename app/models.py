@@ -21,16 +21,16 @@ class Usuario:
         ##logica para INSERT/UPDATE en base datos
         db = get_db()
         cursor = db.cursor()
-        if self.id_usuario:
-            query = """ UPDATE usuario SET nombre = %s, email = %s WHERE id_usuario = %s
+        if self.id:
+            query = """ UPDATE usuarios SET nombre = %s, email = %s WHERE id_usuario = %s
             """, (self.nombre, self.email)
             cursor.execute(query)
             #query = ... es lo mismo que :
             #cursor.execute(""" UPDATE usuario SET nombre = %s, email = %s WHERE id_usuario = %i
             #""", (self.nombre, self.email))
         else:
-            cursor.execute("""INSERT INTO usuario (nombre, email) VALUES (%s, %s) """, (self.nombre, self.email))
-            self.id_usuario = cursor.lastrowid
+            cursor.execute("""INSERT INTO usuarios (nombre, email) VALUES (%s, %s) """, (self.nombre, self.email))
+            self.id = cursor.lastrowid
             db.commit()
             cursor.close()
         pass   

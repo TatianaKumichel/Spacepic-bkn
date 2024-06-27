@@ -9,6 +9,7 @@ init_app(app)
 
 #asociacion de rutas con vistas
 app.route('/usuarios',methods=['GET'])(get_all_usuarios)
+app.route('/usuarios',methods=['POST'])(create_usuario)
 app.route('/pictures',methods=['GET'])(get_all_pictures)
 
 if __name__ == '__main__':
