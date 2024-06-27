@@ -22,13 +22,16 @@ class Usuario:
         db = get_db()
         cursor = db.cursor()
         if self.id:
-            query = """ UPDATE usuarios SET nombre = %s, email = %s WHERE id = %i""", (self.nombre, self.email, self.id)
-            cursor.execute(query)
+            query = """ UPDATE usuarios SET nombre = %s, email = %s WHERE id = %s"""
+            params = (self.nombre, self.email, self.id)
+            cursor.execute(query, params)
         else:
-            cursor.execute("""INSERT INTO usuarios (nombre, email) VALUES (%s, %s) """, (self.nombre, self.email))
+            query = """INSERT INTO usuarios (nombre, email) VALUES (%s, %s) """
+            params = (self.nombre, self.email)
+            cursor.execute(query, params)
             self.id = cursor.lastrowid
-            db.commit()
-            cursor.close()
+        db.commit()
+        cursor.close()
     
     def delete(self):
         #logica para hacer un DELETE en la BASE
@@ -36,7 +39,6 @@ class Usuario:
         cursor = db.cursor()
         query = f" DELETE FROM usuarios WHERE id = {self.id}"
         cursor.execute(query)
-        self.delete()
         db.commit()
         cursor.close()
 

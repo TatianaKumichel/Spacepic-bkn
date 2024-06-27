@@ -20,10 +20,16 @@ def create_usuario():
     return jsonify({'message':'Usuario creado con exito'}), 201
 
 def update_usuario():
-    pass
+    data = request.json
+    user = Usuario(data['id'], data['nombre'], data['email'])
+    user.save()
+    return jsonify({'message':'Datos del Usuario actualizados con exito'}), 200
 
 def delete_usuario():
-    pass
+    data = request.json
+    user = Usuario(data['id'], data['nombre'], data['email'])
+    user.delete()
+    return jsonify({'message':'Usuario eliminado con exito'}), 204
 
 def get_all_pictures():
     pictures = Picture.get_all()
