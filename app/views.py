@@ -1,5 +1,5 @@
 from flask import jsonify
-from app.models import Usuario
+from app.models import *
 
 
 def index():
@@ -20,3 +20,8 @@ def update_usuario():
 
 def delete_usuario():
     pass
+
+def get_all_pictures():
+    pictures = Picture.get_all()
+    list_pictures = [picture.serialize() for picture in pictures]
+    return jsonify(list_pictures)

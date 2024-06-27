@@ -34,3 +34,25 @@ class Usuario:
         
         }
     
+class Picture:
+    def __init__(self, id, name ,url ):
+        self.id = id
+        self.name = name
+        self.url = url
+        
+    @staticmethod
+    def get_all():
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM pictures")#consulta mysql
+        rows = cursor.fetchall()#trae todos los resultados de la consulta
+        pictures = [Picture(id=row[0], name=row[1], url=row[2]) for row in rows]
+        cursor.close()
+        return pictures
+        
+    def serialize(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'url': self.url
+        }
