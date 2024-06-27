@@ -22,31 +22,30 @@ class Usuario:
         db = get_db()
         cursor = db.cursor()
         if self.id:
-            query = """ UPDATE usuarios SET nombre = %s, email = %s WHERE id_usuario = %s
-            """, (self.nombre, self.email)
+            query = """ UPDATE usuarios SET nombre = %s, email = %s WHERE id = %i""", (self.nombre, self.email, self.id)
             cursor.execute(query)
-            #query = ... es lo mismo que :
-            #cursor.execute(""" UPDATE usuario SET nombre = %s, email = %s WHERE id_usuario = %i
-            #""", (self.nombre, self.email))
         else:
             cursor.execute("""INSERT INTO usuarios (nombre, email) VALUES (%s, %s) """, (self.nombre, self.email))
             self.id = cursor.lastrowid
             db.commit()
             cursor.close()
-        pass   
     
     def delete(self):
         #logica para hacer un DELETE en la BASE
-        pass 
-    
+        db = get_db()
+        cursor = db.cursor()
+        query = f" DELETE FROM usuarios WHERE id = {self.id}"
+        cursor.execute(query)
+        self.delete()
+        db.commit()
+        cursor.close()
+
     #metodo para ordenar la representacion de la clase
     def serialize(self):
         return {
             'id': self.id,
             'nombre': self.nombre,
             'email': self.email
-            
-        
         }
     
 class Picture:
