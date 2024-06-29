@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios CRUD</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <form action="" id="form-usuario">
+        <div class="d-flex">
+            <div class="form-control d-flex-column">
+                <label for="id">id</label>
+                <input type="text" class="input-search" name="id" id="id">
+            </div>
+            <div class="form-control d-flex-column">
+                <label for="nombre">nombre</label>
+                <input type="text" class="input-search" name="nombre" id="nombre">
+            </div>
+            <div class="form-control d-flex-column">
+                <label for="email">email</label>
+                <input type="text" class="input-search" name="email" id="email">
+            </div>
+            <button class="btn-cac" type="button" id="btn-save-usuario">Agregar</button>
+        </div>
+    </form>
+
+    <section id="list" class="container">
+        <h3 class="subtitle">Listado de usuarios</h3>
+        <table id="list-tabla-usuarios" class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="../static/crud-usuarios-fetch.js"></script>
+</body>
+</html>
