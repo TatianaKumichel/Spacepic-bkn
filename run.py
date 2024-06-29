@@ -7,10 +7,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 init_app(app) 
-
-#permita solicitudes desde cualquier origen
+#permitir solicitudes desde cualquier origen
 CORS(app)
-
 #asociacion de rutas con vistas
 app.route('/usuarios',methods=['GET'])(get_all_usuarios)
 app.route('/usuarios',methods=['POST'])(create_usuario)

@@ -2,7 +2,7 @@ from app.database import get_db
 
 class Usuario:
     def __init__(self,id=None, nombre=None, email=None):
-        self.id= id
+        self.id = id
         self.nombre = nombre
         self.email = email
         
