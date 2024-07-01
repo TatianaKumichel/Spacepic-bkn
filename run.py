@@ -12,7 +12,7 @@ CORS(app)
 #asociacion de rutas con vistas
 app.route('/usuarios',methods=['GET'])(get_all_usuarios)
 app.route('/usuarios',methods=['POST'])(create_usuario)
-app.route('/usuarios',methods=['PUT'])(update_usuario)
+app.route('/usuarios/<int:user_id>',methods=['PUT'])(update_usuario)
 app.route('/usuarios/<int:user_id>',methods=['DELETE'])(delete_usuario)
 app.route('/pictures',methods=['GET'])(get_all_pictures)
 

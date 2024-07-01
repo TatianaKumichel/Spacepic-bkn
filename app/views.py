@@ -27,7 +27,7 @@ def update_usuario(user_id):
 def delete_usuario(user_id):
     user = Usuario.get_by_id(user_id)
     user.delete()
-    return jsonify({'message':'Usuario eliminado con exito'}), 204
+    return jsonify({'message':'Usuario eliminado con exito'}), 200
 
 def get_all_pictures():
     pictures = Picture.get_all()
