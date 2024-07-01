@@ -13,18 +13,19 @@ CREATE TABLE `spacepic`.`pictures` (
   `url` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE);
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg1.jpeg', 'https://drive.google.com/file/d/1Mj7K3RuHIryXC-6V9toceirXwLopSOAU/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg2.jpeg', 'https://drive.google.com/file/d/1aaUzkHmObXaBJ_1xUse1pzOyoKwWoapj/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg3.jpeg', 'https://drive.google.com/file/d/1bArheHThXWbiyLoX6O7Y88GxW3wIkukb/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg4.jpeg', 'https://drive.google.com/file/d/1bA1i3YrIIQaCw_c0USJaYNAMARs6DCZ5/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg5.jpeg', 'https://drive.google.com/file/d/1b6MyR50Sh563fDd35K2obo70jDxkDO2V/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg12.jpeg', 'https://drive.google.com/file/d/1alZRGRaEdCt-fT9ZC8iUQkA25F9l76Aw/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg13.jpeg', 'https://drive.google.com/file/d/1aiNMu3yuPj7nDD4NXxRGSNNLMpo7-wI8/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg14.jpeg', 'https://drive.google.com/file/d/1aiEb8i7GL0iee2Q65jy3-FvJriQkpXIP/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg15.jpeg', 'https://drive.google.com/file/d/1afDsDBKPKiVPVhDoUvc2dPK-XRbsnG6i/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg17.jpeg', 'https://drive.google.com/file/d/1adT3M4SsFCVp7BLSYZrn_yL7aOO3ccdP/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg18.jpeg', 'https://drive.google.com/file/d/1adABbfD9Pk4dKBKcSt2qM6D2IoL6frVq/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg19.jpeg', 'https://drive.google.com/file/d/1abdU4CcezXrDX79q-qEy3Fb83TkIJ_eX/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg20.jpeg', 'https://drive.google.com/file/d/1a_3kvV5uxrqIwKeTIMJNaH5_mErieYAk/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg21.jpeg', 'https://drive.google.com/file/d/1aZxK2yfJp5r7lELDMKwQ0qFLdVt64UU7/view?usp=sharing');
-INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg22.jpeg', 'https://drive.google.com/file/d/1bB3LpfrBeDYOF_YidQ9CyeGYsbDQsitq/view?usp=sharing');
+  
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg1.jpeg', 'https://drive.google.com/thumbnail?id=1Mj7K3RuHIryXC-6V9toceirXwLopSOAU');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg2.jpeg', 'https://drive.google.com/thumbnail?id=1aaUzkHmObXaBJ_1xUse1pzOyoKwWoapj');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg3.jpeg', 'https://drive.google.com/thumbnail?id=1bArheHThXWbiyLoX6O7Y88GxW3wIkukb');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg4.jpeg', 'https://drive.google.com/thumbnail?id=1bA1i3YrIIQaCw_c0USJaYNAMARs6DCZ5');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg5.jpeg', 'https://drive.google.com/thumbnail?id=1b6MyR50Sh563fDd35K2obo70jDxkDO2V');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg12.jpeg', 'https://drive.google.com/thumbnail?id=1alZRGRaEdCt-fT9ZC8iUQkA25F9l76Aw');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg13.jpeg', 'https://drive.google.com/thumbnail?id=1aiNMu3yuPj7nDD4NXxRGSNNLMpo7-wI8');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg14.jpeg', 'https://drive.google.com/thumbnail?id=1aiEb8i7GL0iee2Q65jy3-FvJriQkpXIP');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg15.jpeg', 'https://drive.google.com/thumbnail?id=1afDsDBKPKiVPVhDoUvc2dPK-XRbsnG6i');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg17.jpeg', 'https://drive.google.com/thumbnail?id=1adT3M4SsFCVp7BLSYZrn_yL7aOO3ccdP');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg18.jpeg', 'https://drive.google.com/thumbnail?id=1adABbfD9Pk4dKBKcSt2qM6D2IoL6frVq');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg19.jpeg', 'https://drive.google.com/thumbnail?id=1abdU4CcezXrDX79q-qEy3Fb83TkIJ_eX');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg20.jpeg', 'https://drive.google.com/thumbnail?id=1a_3kvV5uxrqIwKeTIMJNaH5_mErieYAk');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg21.jpeg', 'https://drive.google.com/thumbnail?id=1aZxK2yfJp5r7lELDMKwQ0qFLdVt64UU7');
+INSERT INTO `spacepic`.`pictures` (`name`, `url`) VALUES ('spaimg22.jpeg', 'https://drive.google.com/thumbnail?id=1bB3LpfrBeDYOF_YidQ9CyeGYsbDQsitq');

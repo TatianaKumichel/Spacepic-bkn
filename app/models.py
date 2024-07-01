@@ -16,6 +16,17 @@ class Usuario:
         usuarios = [Usuario(id=row[0], nombre=row[1], email=row[2]) for row in rows] #crea una lista usuarios donde cada elemento es un objeto de la clase Usuario
         cursor.close()
         return usuarios
+
+    @staticmethod
+    def get_by_id(id):
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM usuarios WHERE id= %s", (id,))#consulta mysql
+        row = cursor.fetchone()
+        cursor.close()
+        if row:
+            return Usuario(id=row[0], nombre=row[1], email=row[2])
+        return None
         
     def save(self):
         ##logica para INSERT/UPDATE en base datos
@@ -65,7 +76,7 @@ class Picture:
         pictures = [Picture(id=row[0], name=row[1], url=row[2]) for row in rows]
         cursor.close()
         return pictures
-        
+               
     def serialize(self):
         return {
             'id': self.id,

@@ -19,15 +19,13 @@ def create_usuario():
     new_usuario.save()
     return jsonify({'message':'Usuario creado con exito'}), 201
 
-def update_usuario():
-    data = request.json
-    user = Usuario(data['id'], data['nombre'], data['email'])
+def update_usuario(user_id):
+    user = Usuario.get_by_id(user_id)
     user.save()
     return jsonify({'message':'Datos del Usuario actualizados con exito'}), 200
 
-def delete_usuario():
-    data = request.json
-    user = Usuario(data['id'], data['nombre'], data['email'])
+def delete_usuario(user_id):
+    user = Usuario.get_by_id(user_id)
     user.delete()
     return jsonify({'message':'Usuario eliminado con exito'}), 204
 
